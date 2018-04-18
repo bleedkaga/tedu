@@ -5,18 +5,18 @@ USE tedu;
 
 CREATE TABLE dept(
 	did INT,
-	dname VARCHAR(20),
+	dname VARCHAR(20) UNIQUE,
 	empCount INT
 );
 
 INSERT INTO dept VALUES (
 	10,
-	'研发部',
+	NULL,
 	3
 );
 INSERT INTO dept VALUES (
 	20,
-	'市场部',
+	NULL,
 	1
 );
 INSERT INTO dept VALUES (
@@ -26,29 +26,29 @@ INSERT INTO dept VALUES (
 );
 
 CREATE TABLE emp(
-	eid INT,
+	eid INT PRIMARY KEY,
 	ename VARCHAR(32),
-	salary INT,
+	salary DECIMAL(10, 2),
 	birthday DATE,
 	deptId INT
 );
 
 INSERT INTO emp VALUES (
-	20,
+	1,
 	'TOM',
 	9000,
 	'1990-11-10',
 	10
 );
 INSERT INTO emp VALUES (
-	30,
+	4,
 	'TOM2',
 	9000,
 	'1990-11-10',
 	10
 );
 INSERT INTO emp VALUES (
-	30,
+	6,
 	'TOM3',
 	9000,
 	'1990-11-10',
@@ -56,7 +56,7 @@ INSERT INTO emp VALUES (
 );
 
 INSERT INTO emp VALUES (
-	40,
+	2,
 	'JACK',
 	8000,
 	'1990-11-11',
@@ -64,14 +64,14 @@ INSERT INTO emp VALUES (
 );
 
 INSERT INTO emp VALUES (
-	50,
+	3,
 	'BLUE',
 	8000,
 	'1990-12-11',
 	20
 );
 INSERT INTO emp VALUES (
-	60,
+	5,
 	'JACK',
 	8500,
 	'1990-12-11',
