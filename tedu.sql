@@ -4,7 +4,7 @@ CREATE DATABASE tedu CHARSET=UTF8;
 USE tedu;
 
 CREATE TABLE dept(
-	did INT,
+	did INT PRIMARY KEY,
 	dname VARCHAR(20) UNIQUE,
 	empCount INT
 );
@@ -28,16 +28,24 @@ INSERT INTO dept VALUES (
 CREATE TABLE emp(
 	eid INT PRIMARY KEY,
 	ename VARCHAR(32),
-	salary DECIMAL(10, 2),
-	birthday DATE,
-	deptId INT
+	salary DECIMAL(10, 2) DEFAULT 99999.99,
+	birthday DATE DEFAULT '1970-01-01',
+	deptId INT DEFAULT NULL,
+	FOREIGN KEY(deptId) REFERENCES dept(did)
 );
 
-INSERT INTO emp VALUES (
+
+INSERT INTO emp(eid, ename, salary, deptId) VALUES (
+	8,
+	'BLEEd',
+	9000,
+	30
+);
+
+INSERT INTO emp(eid, ename, salary, deptId) VALUES (
 	1,
 	'TOM',
 	9000,
-	'1990-11-10',
 	10
 );
 INSERT INTO emp VALUES (
