@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Select change</title>
+</head>
+<body>
+	<select name="select" id="select">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+	</select>
+
+	<script>
+		function $( id ){
+			return document.getElementById(id)
+		}
+
+		$('select').onchange = function(){
+			console.log(this.value)
+		}
+	</script>
+</body>
+</html>yi

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script src="xhr.js"></script>
+	<script>
+		function getAjax(){
+			ajax('http://localhost/ajax/index.php', 'get', (res) => {
+				console.log( res )
+			})
+		}
+
+		getAjax();
+	</script>
+</body>
+</html>
