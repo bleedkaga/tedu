@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "那天，我去了他家，我说：我草，你家真大。她想和我去草地野餐。我草草的收拾了草地。他说：我去去就来"
+        str = str.replace(/我[去草][去草]?/g, kword => {
+            return kword.length == 2? '**' : '***'
+        })
+        console.log( str )
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var code = "Es9d"
+
+        do{
+            var input = prompt("请输入验证码"+code)
+            if(input.toLowerCase() != code.toLowerCase() ){
+                alert('error')
+            } else {
+                break
+            }
+        } while( true )
+        document.write("<h1>valid</h1>")
+    </script>
+</body>
+</html>

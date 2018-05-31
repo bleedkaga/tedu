@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		label{
+			display: inline-block;
+			width: 80px;
+			text-align: right;
+		}
+	</style>
+</head>
+<body>
+	<div >
+		<p><label for="">用户名：</label><input type="text" id="uname"></p>
+		<p><label for="">密码：</label><input type="password" id="upwd"></p>
+		<p><label for="">email：</label><input type="text" id="uemail"></p>
+		<p><label for="">phone：</label><input type="text" id="utel"></p>
+		<p><label for="">接收人：</label><input type="text" id="user_name"></p>
+		<p><label for="">gender：</label><select name="" id="gender"><option value="1">男</option><option value="0">男</option></select></p>
+		<p><button onclick="user_register()">注册</button></p>
+	</div>
+	<script>
+
+		function $(id){
+			return document.getElementById(id)
+		}
+		function createXhr(){
+			var xhr;
+			if(window.XMLHttpRequest){
+				xhr = new XMLHttpRequest();
+			} else {
+				xhr = new ActiveXObject('Microsoft.XMLHTTP');
+			}
+
+			return xhr;
+		}
+		let isRegister = false;
+		function user_register(){
+			 if(!isRegister){
+			 	var xhr = createXhr();
+			 	xhr.open("post", "02-register.php", true);
+			 	xhr.onreadystatechange = () => {
+			 		if(xhr.readyState == 4 && xhr.status == 200){
+			 			console.log(xhr.responseText);
+			 		}
+			 	}
+			 	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+			 	var uname = $('uname').value;
+			 	var upwd = $('upwd').value;
+			 	var uemail = $('uemail').value;
+			 	var utel = $('utel').value;
+			 	var user_name = $('user_name').value;
+			 	var gender = $('gender').value;
+
+			 	var message = `uname=${uname}&upwd=${upwd}&uemail=${uemail}&utel=${utel}&user_name=${user_name}&ugender=${gender}`;
+
+			 	xhr.send(message);
+			 } else{
+			 	alert('该用户不能注册')
+			 }
+		}
+	</script>
+</body>
+</html>

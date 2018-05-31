@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button onclick="loadjson()">Load</button>
+	<button onclick="loadSql()">Load Server</button>
+		
+		<hr>
+
+	<div id="INTO"></div>
+	<script src="../common.js"></script>
+	<script>
+		function loadjson(){
+			$_gets('http://localhost/4-project-1/01-json-php.php')
+			.then( res => {
+				console.log(  JSON.parse(res) )
+			})
+			.catch( err => {
+				console.error( err )
+			})
+		}
+
+		function loadSql(){
+			$_gets('http://localhost/4-project-1/01-php-sql.php')
+			.then( res => {
+				console.table(  JSON.parse(res) )
+				writeTable(JSON.parse(res))
+			})
+			.catch( err => {
+				console.error( err )
+			})
+		}
+
+		const writeTable = ( data ) => {
+			
+			var thead = `<tr>
+							<th>id</th>
+							<th>name</th>
+							<th>pwd</th>
+							<th>email</th>
+							<th>phone</th>
+							<th>gender</th>
+							<th>avater</th>
+							<th>registerTime</th>
+							<th>inOnline</th>
+						<tr>`;
+			for(let i = 0; i < data.length; i++){
+				thead+=`
+					<tr>
+						<td>${data[i].uid}</td>
+						<td>${data[i].name}</td>
+						<td>${data[i].upwd}</td>
+						<td>${data[i].email}</td>
+						<td>${data[i].phone}</td>
+						<td>${data[i].sex}</td>
+						<td>${data[i].avatar}</td>
+						<td>${data[i].registerTime}</td>
+						<td>${data[i].isOnline}</td></tr>
+				`;
+
+
+			}
+
+			var table = '<table border border-collapse="collapse">'+thead+'</table>';
+			console.log(table)
+			$('INTO').innerHTML = table;
+		}
+	</script>
+</body>
+</html>

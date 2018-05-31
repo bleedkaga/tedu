@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="text">
+	<input type="button" value="显示欢迎信息" id="welcome">
+	<hr>
+	<h1 id="res"></h1>
+	<script src="xhr.js"></script>
+	<script>
+		var names = document.getElementById('text');
+		var button = document.getElementById('welcome');
+		var resf = document.getElementById('res')
+		button.onclick = function(){
+			ajax('http://localhost/ajax/ajax-get.php?name='+names.value, 'get', '', ( res) => {
+				console.log(res)
+				resf.innerHTML = res;
+			})
+		}
+	</script>
+</body>
+</html>

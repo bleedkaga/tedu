@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function encode( str ){
+            return str.charCodeAt();
+        }
+
+        function decode( code ){
+            return String.fromCharCode( code )
+        }
+
+        var src = "江陵城南往西天宁寺"
+        var codeArr = []
+        
+
+        for(var i = 0; i < src.length; i++){
+            var c = encode(src[i]);
+            codeArr.push(c)
+        }
+
+        console.log(codeArr)
+
+        for(var i = 0; i < codeArr.length; i++){
+            var d = decode(codeArr[i]);
+            console.log(d)
+        }
+
+    </script>
+</body>
+</html>

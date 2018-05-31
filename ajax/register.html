@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		form p{
+			border-bottom: 1px solid #ddd;
+			line-height: 50px;
+			padding:0;
+			margin:0;
+		}
+		form p label{
+			display: inline-block;
+			width: 120px;
+			text-align: right;
+		}
+		form p input{
+			width: 70%;
+			padding: 8px 0;
+			text-indent: 1em;
+			border-radius: 4px;
+			border: 1px solid #ddd;
+		}
+		form p input.btn{
+			width: 100px;
+			text-align:center;
+			text-indent: 0;
+			background: #188fff;
+			color:#fff;
+			cursor: pointer;
+			border: none;
+		}
+		form p input:focus{
+			outline: none;
+			border: 1px solid #188fff;
+			border-color:#188fff;
+		}
+		form p em{
+			font-size: 10px;
+			font-style: normal;
+			color:#f00;
+			line-height: 1;
+			display: block;
+			margin-left: 125px;
+			padding: 5px 0;
+		}
+		form p em.success{
+			color:#13fd71;
+		}
+		form p em.warning{
+			color:#fff006;
+		}
+		form p em.error{
+			color:#f00;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<p>
+			<label for="username">用户名：</label>
+			<input type="text" name="username" id="username">
+			<em class="success">成功</em>	
+		</p>
+		<p>
+			<label for="password">密码：</label>
+			<input type="password" name="password" id="password">
+			<em class="warning">错误信息</em>	
+		</p>
+		<p>
+			<label for="email">邮箱：</label>
+			<input type="text" name="email" id="email">
+			<em class="error">错误信息</em>	
+		</p>
+		<p>
+			<label for="phone">手机号：</label>
+			<input type="text" name="phone" id="phone">
+			<em class="error">错误信息</em>	
+		</p>
+		<p>
+			<label for="user_name">真实用户名：</label>
+			<input type="text" name="user_name" id="user_name">
+			<em class="error">错误信息</em>	
+		</p>
+		<p>
+			<label for="gender">性别：</label>
+			<select id="gender">
+				<option value="1">男</option>
+				<option value="0">女</option>
+			</select>
+		</p>
+		<p>
+			<label for="gender"></label>
+			<input type="submit" value="提交" class="btn">
+		</p>
+	</form>
+</body>
+</html>

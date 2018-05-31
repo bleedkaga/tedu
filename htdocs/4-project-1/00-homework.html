@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button onclick="loadJSON()">LOAD</button>
+	<script src="../common.js"></script>
+	<script>
+		function loadJSON(){
+			$_gets('http://localhost/4-project-1/homework.json')
+				.then( text => {
+					var text = JSON.parse(text)
+					for(var i in text){
+						console.log(text[i])
+					}
+				}).catch( err => {
+					console.error(err)
+				})
+		}
+
+	</script>
+</body>
+</html>
