@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="scores">
+        <li>76</li>
+        <li>85</li>
+        <li>63</li>
+        <li>90</li>
+        <li>58</li>
+    </ul>
+
+    <button id="sort-desc">desc↑</button>
+    <button id="sort-asc">asc↓</button>
+    <button id="sort" onclick="sort(this)">排序</button>
+    <script>
+        var desc = true;
+        function sort(btn){
+            var html = scores.innerHTML;
+            html = html.replace(/^\s*<li>|<\/li>\s*$/ig, '')
+                        .split(/<\/li>\s*<li>/g);
+            if(desc){
+                btn.innerText = '降序'
+                html = html.sort( (a, b) => { return +a > +b })
+            } else {
+                btn.innerText = '升序'
+                html = html.sort( (a, b) => { return +a < +b })
+            }
+            desc = !desc
+
+            html = html.join('</li><li>')
+
+            scores.innerHTML = '<li>'+html+'</li>'
+        }
+    </script>
+</body>
+</html>
