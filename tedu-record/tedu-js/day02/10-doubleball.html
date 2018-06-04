@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function doubleball(){
+            var reds = [];
+            while( reds.length < 6){
+                var r = parseInt(Math.random() * 33 + 1);
+                for(var i = 0; i < reds.length; i++){
+                    if(r == reds[i]) break;
+                }
+                if(i == reds.length){
+                    reds.push( r )
+                }
+            }
+
+            reds.sort( (a, b) => { return a - b })
+            var b = parseInt(Math.random() * 6 + 1);
+            document.write(String(reds) +'|'+b+'<br>')
+        }
+        doubleball()
+        doubleball()
+        doubleball()
+        doubleball()
+        doubleball()
+        doubleball()
+    </script>
+</body>
+</html>

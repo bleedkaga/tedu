@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #area{
+        width: 240px;
+        height: 80px;
+        background:#188fff;
+        border: 2px solid red;
+        box-sizing: border-box;
+        text-align:center;
+        line-height:80px;
+        font-size: 1.5em;
+    }
+    </style>
+</head>
+<body>
+    <div id="area" onmouseout="out(this)" onmouseover="over(this)"></div>
+    <script>
+        function over(div){
+            div.style.backgroundColor = '#188fff'
+            div.style.color = '#000'
+            var r = Math.random();
+            document.writeln(r)
+            div.innerText = r < 0.001 ? '一等奖 苹果笔记本':
+                            r < 0.01 ? '二等奖 蓝牙音响':
+                            r < 0.1 ? '三等奖 国产耳机': '参与奖：纸巾一包';
+        }
+        function out(div){
+            div.style.backgroundColor = '#fff'
+            div.style.color = '#fff'
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var reg = /^\d{6}$/
+
+        do {
+            var input = prompt('请输入6位密码');
+
+            if( !reg.test( input )){
+                alert('密码格式不正确')
+            } else {
+                break
+            }
+        } while( true )
+
+        document.write('验证通过')
+    </script>
+</body>
+</html>
