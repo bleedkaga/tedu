@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fun(){
+            for( var i = 0, arr = []; i < 3; i++){
+                arr[i] = (function(){
+                    var pri = i;
+                    return function(){
+                        console.log( pri)
+                    }
+                })()
+            }
+
+            return arr;
+        }
+
+        var funs = fun();
+        console.log(funs)
+        funs[0]()
+        funs[1]()
+        funs[2]()
+
+        funs = null
+        console.log(funs)
+    </script>
+</body>
+</html>
